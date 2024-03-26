@@ -1,10 +1,10 @@
 document.addEventListener('keypress', function (e) {
     if (e.key === 'A') {
-        // Handle key A
+        console.log(e.key);
     } else if (e.key === 'B') {
-        // Handle key B
+        console.log(e.key);
     } else if (e.key === 'C') {
-        // Handle key C
+        console.log(e.key);
     } else {
         console.log('key unrecognized');
     }
