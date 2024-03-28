@@ -1,53 +1,74 @@
 const questions = [
   {
-    question: "Q1?",
-    options: ["A.", "B.", "C."],
-    weights: { A: -2, B: -1, C: 0 },
+    question: "What will you wear with a white t-shirt?",
+    options: ["A. Levi's Jeans", "B. Zara's Trousers", "C. Nike's Joggers"],
+    weights: { A: 0, B: -2, C: -2 },
   },
   {
-    question: "Q2?",
-    options: ["A. ", "B. ", "C. "],
+    question: "You are hungry. What are you going to order?",
+    options: [
+      "A. McDonald's Big Mac Menu",
+      "B. Exki Sandwhich",
+      "C. Eeetwell Chicken Wraps",
+    ],
+    weights: { A: -3, B: 0, C: -1 }, // Assigning weights for each option
+  },
+  {
+    question:
+      "You are studying for an upcoming exam. How will you make your summary?",
+    options: [
+      "A. I prefer a digital summary.",
+      "B. I prefer printing out my summary.",
+      "C. I prefer writing my summary on paper.",
+    ],
     weights: { A: 0, B: -2, C: -1 }, // Assigning weights for each option
   },
   {
-    question: "Q3?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
+    question:
+      "You live in Antwerp and you are invited to a party in Gent. How will you get there?",
+    options: [
+      "A. I will take public transport.",
+      "B. I am going to carpool with a friend.",
+      "C. I don't feel like going.",
+    ],
+    weights: { A: -1, B: -2, C: 0 }, // Assigning weights for each option
   },
   {
-    question: "Q4?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
+    question:
+      "You just came back from an intensive training session. How long are you going to shower?",
+    options: [
+      "A. Around 5-10 minutes.",
+      "B. I won't shower I will take a bath.",
+      "C. More than 10 minutes.",
+    ],
+    weights: { A: -1, B: -2, C: -2 }, // Assigning weights for each option
   },
   {
-    question: "Q5?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
+    question: "Summer vacation is around the corner. What do you do?",
+    options: [
+      "A. I will travel and go to a warmer place.",
+      "B. I have no plans. ",
+      "C. I will go on a city trip.",
+    ],
+    weights: { A: -3, B: 0, C: -1 }, // Assigning weights for each option
   },
   {
-    question: "Q6?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
+    question: "How do you prefer to stay hydrated throughout the day?",
+    options: [
+      "A. Buy bottled drinks whenever thirsty.",
+      "B. Use disposable cups or bottles for drinks.",
+      "C. Carry a reusable water bottle and refill it with tap water",
+    ],
+    weights: { A: -3, B: -2, C: 0 }, // Assigning weights for each option
   },
   {
-    question: "Q7?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
-  },
-  {
-    question: "Q8?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
-  },
-  {
-    question: "Q9?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
-  },
-  {
-    question: "Q10?",
-    options: ["A.", "B. ", "C. "],
-    weights: { A: -2, B: -1, C: 0 }, // Assigning weights for each option
+    question: "How do you usually handle your old electronics or gadgets??",
+    options: [
+      "A. Recycle them or donate them to electronic recycling programs.",
+      "B. Throw them away in the trash.",
+      "C. Keeping them in a drawer somewhere, unsure of what to do with them.",
+    ],
+    weights: { A: 0, B: -3, C: 0 }, // Assigning weights for each option
   },
 ];
 
@@ -98,7 +119,7 @@ function endQuiz() {
     questionElement.textContent = `You're doing an amazing job living eco-consciously! Your actions make a big impact. Let's inspire others for a greener future!`;
     backgroundImageUrl = "url(images/outcome1-3.jpg)"; // Set the background image URL for positive score
     console.log(score);
-  } else if (score >= -11) {
+  } else if (score >= -8) {
     questionElement.textContent = `Our planet is our only home. Every small action counts for a sustainable future. Let's be the change we wish to see!`;
     backgroundImageUrl = "url(images/outcome2-1.jpg)"; // Set the background image URL for average score
     console.log(score);
