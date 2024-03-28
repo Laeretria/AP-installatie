@@ -1,7 +1,7 @@
 const questions = [
   {
     question: "Q1?",
-    options: ["A.", "B. ", "C. "],
+    options: ["A.", "B.", "C."],
     weights: { A: -2, B: -1, C: 0 },
   },
   {
@@ -72,6 +72,9 @@ function showQuestion() {
     optionElement.addEventListener("click", () => checkAnswer(optionKey));
     optionsElement.appendChild(optionElement);
   });
+
+  // Hide the h3 element after the quiz has started
+  document.querySelector("h3").style.display = "none";
 }
 
 function checkAnswer(option) {
@@ -79,9 +82,6 @@ function checkAnswer(option) {
     const question = questions[currentQuestion];
     const weight = question.weights[option];
     score += weight; // Adding the weight of the selected option to the score
-    console.log(score);
-    console.log(option);
-    console.log(weight);
     currentQuestion++;
     if (currentQuestion < questions.length) {
       showQuestion();
@@ -92,13 +92,26 @@ function checkAnswer(option) {
 }
 
 function endQuiz() {
+  let backgroundImageUrl = ""; // Initialize variable to store the background image URL
+
   if (score >= -2) {
-    questionElement.textContent = `Placement Holder Positive Score`;
-  } else if (score >= -5) {
-    questionElement.textContent = `Placement Holder Average Score`;
+    questionElement.textContent = `You're doing an amazing job living eco-consciously! Your actions make a big impact. Let's inspire others for a greener future!`;
+    backgroundImageUrl = "url(images/outcome1-3.jpg)"; // Set the background image URL for positive score
+    console.log(score);
+  } else if (score >= -11) {
+    questionElement.textContent = `Our planet is our only home. Every small action counts for a sustainable future. Let's be the change we wish to see!`;
+    backgroundImageUrl = "url(images/outcome2-1.jpg)"; // Set the background image URL for average score
+    console.log(score);
+    // questionElement.style.color = "black";
   } else {
-    questionElement.textContent = `Placement Holder Negative Score`;
+    questionElement.textContent = `This is how the world will look like in 20 years if you don't start taking care of Mother Earth`;
+    backgroundImageUrl = "url(images/outcome3-2.jpg)"; // Set the background image URL for negative score
+    console.log(score);
   }
+
+  // Apply the background image to the body element
+  document.body.style.backgroundImage = backgroundImageUrl;
+
   optionsElement.innerHTML = "";
 }
 
