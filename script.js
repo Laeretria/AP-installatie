@@ -102,6 +102,7 @@ function checkAnswer(option) {
   if (quizStarted) {
     const question = questions[currentQuestion];
     const weight = question.weights[option];
+    change_hue_to(weight === 0 ? green : weight === -1 ? orange : red);
     score += weight; // Adding the weight of the selected option to the score
     currentQuestion++;
     if (currentQuestion < questions.length) {
