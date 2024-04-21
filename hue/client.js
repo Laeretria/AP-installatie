@@ -31,6 +31,13 @@ async function change_hue_to(hue) {
   });
 }
 
+async function reset_color() {
+  await fetch(`${endpoint}/api/${username}/lights/1/state`, {
+    method: "PUT",
+    body: JSON.stringify({ on: true, sat: 0, bri: 0, hue: 0 }),
+  });
+}
+
 init().then(async () => {
   console.log("Philips Hue client initialized.");
 });

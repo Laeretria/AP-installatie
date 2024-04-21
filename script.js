@@ -76,6 +76,8 @@ let currentQuestion = 0;
 let score = 0;
 let quizStarted = false;
 
+reset_color();
+
 const generalQuestionElement = document.getElementById("general-question");
 const questionElement = document.getElementById("question");
 const optionsElement = document.getElementById("options");
@@ -90,7 +92,9 @@ function showQuestion() {
     optionElement.classList.add("option");
     optionElement.textContent = option;
     const optionKey = option[0]; // Extracting the key (A, B, C) from the option
-    optionElement.addEventListener("click", () => checkAnswer(optionKey));
+    optionElement.addEventListener("click", () =>
+      checkAnswer(optionKey.toUpperCase()),
+    );
     optionsElement.appendChild(optionElement);
   });
 

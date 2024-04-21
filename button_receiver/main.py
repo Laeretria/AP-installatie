@@ -5,13 +5,13 @@ import RPi.GPIO as GPIO # Allows us to call our GPIO pins and names it just GPIO
 import keyboard
 
 keymapping = {
-    "21": "A",
-    "14": "B",
-    "27": "C",
+    "20": "a",
+    "4": "b",
+    "18": "c",
 }
 
 GPIO.setmode(GPIO.BCM)  # Set's GPIO pins to BCM GPIO numbering
-PINS = [21,14,27]        # Sets our input pin, in this example I'm connecting our button to pin 4. Pin 0 is the SDA pin so I avoid using it for sensors/buttons
+PINS = [20,4,18]        # Sets our input pin, in this example I'm connecting our button to pin 4. Pin 0 is the SDA pin so I avoid using it for sensors/buttons
 
 for pin in PINS:
     GPIO.setup(pin, GPIO.IN)
