@@ -1,11 +1,11 @@
 const questions = [
   {
-    question: "What will you wear with a white t-shirt?",
+    question: "What are you going to style a white t-shirt with?",
     options: ["A. Levi's Jeans", "B. Zara's Trousers", "C. Nike's Joggers"],
-    weights: { A: 0, B: -2, C: -2 },
+    weights: { A: 0, B: -2, C: -2 }, // Assigning weights for each option
   },
   {
-    question: "You are hungry. What are you going to order?",
+    question: "You are starving of hunger. What are you going to order?",
     options: [
       "A. McDonald's Big Mac Menu",
       "B. Exki Sandwhich",
@@ -62,7 +62,7 @@ const questions = [
     weights: { A: -3, B: -2, C: 0 }, // Assigning weights for each option
   },
   {
-    question: "How do you usually handle your old electronics or gadgets??",
+    question: "How do you usually handle your old electronics or gadgets?",
     options: [
       "A. Recycle them or donate them to electronic recycling programs.",
       "B. Throw them away in the trash.",

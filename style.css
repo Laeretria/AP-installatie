@@ -1,14 +1,46 @@
-html,
-body {
+h2 {
+  color: #553b3b;
+  position: relative;
+  font-size: 6vw; /* Use viewport width as a relative unit for font size */
+  font-weight: 400;
+  font-family: italiana;
+  display: inline-block;
+  line-height: 12vh;
+  max-width: 40%; /* Allow the width to adjust based on the parent container */
+  width: auto;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+h3,
+#question {
+  color: #695f5f;
+  font-family: Roboto;
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 500;
+  width: 29%; /* Allow the width to adjust based on the parent container */
+  margin-left: -1%;
+}
+
+#general-question {
+  font-size: 1.2vw;
+  color: #695f5f;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: lighter;
+  margin-left: -17%;
+}
+
+.option {
   width: 100%;
-  height: 100%;
-  margin: 0;
-  background-color: rgb(230, 121, 157);
-  color: white;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.2vw;
+  color: #695f5f;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: lighter;
+  width: 100%;
+  line-height: 4vh;
 }
 
 .quiz-container {
@@ -16,12 +48,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   line-height: 2rem;
-}
-
-.quiz-container h2,
-.quiz-container h3,
-.quiz-container div {
-  text-align: center;
+  width: auto;
 }
