@@ -90,7 +90,7 @@ function showQuestion() {
   question.options.forEach((option, index) => {
     const optionElement = document.createElement("div");
     optionElement.classList.add("option");
-    optionElement.textContent = option;
+    optionElement.innerHTML = `<img src="assets/circle-fill.svg" alt="circle" class='circle' />${option}`;
     const optionKey = option[0]; // Extracting the key (A, B, C) from the option
     optionElement.addEventListener("click", () =>
       checkAnswer(optionKey.toUpperCase()),
@@ -131,6 +131,8 @@ function endQuiz() {
     // questionElement.style.color = "black";
   } else {
     questionElement.textContent = `This is how the world will look like in 20 years if you don't start taking care of Mother Earth`;
+    questionElement.classList.add("bad-outcome");
+    document.getElementById("logo").classList.add("hidden");
     backgroundImageUrl = "url(images/outcome3-2.jpg)"; // Set the background image URL for negative score
     console.log(score);
   }
