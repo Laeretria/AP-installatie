@@ -1,4 +1,4 @@
-let endpoint = "http://192.168.1.133";
+let endpoint = "http://10.150.197.220";
 const usernameKey = "hue_username";
 const device = JSON.stringify({ devicetype: "laeretria_ap_installatie" });
 const red = 0;
