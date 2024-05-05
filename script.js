@@ -28,10 +28,10 @@ const questions = [
       "You live in Antwerp and you are invited to a party in Gent. How will you get there?",
     options: [
       "A. I will take public transport.",
-      "B. I am going to carpool with a friend.",
+      "B. I am going with the car.",
       "C. I don't feel like going.",
     ],
-    weights: { A: -1, B: -2, C: 0 }, // Assigning weights for each option
+    weights: { A: 0, B: -2, C: 0 }, // Assigning weights for each option
   },
   {
     question:
@@ -75,6 +75,7 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let quizStarted = false;
+let quizEnded = false;
 
 reset_color();
 
@@ -90,8 +91,8 @@ function showQuestion() {
   question.options.forEach((option, index) => {
     const optionElement = document.createElement("div");
     optionElement.classList.add("option");
-    optionElement.innerHTML = `<img src="assets/circle-fill.svg" alt="circle" class='circle' />${option}`;
     const optionKey = option[0]; // Extracting the key (A, B, C) from the option
+    optionElement.innerHTML = `<div class='circle-option option-${optionKey.toUpperCase()}' /></div>${option}`;
     optionElement.addEventListener("click", () =>
       checkAnswer(optionKey.toUpperCase()),
     );
@@ -106,6 +107,7 @@ function checkAnswer(option) {
   if (quizStarted) {
     const question = questions[currentQuestion];
     const weight = question.weights[option];
+    console.log(option);
     change_hue_to(weight === 0 ? green : weight === -1 ? orange : red);
     score += weight; // Adding the weight of the selected option to the score
     currentQuestion++;
@@ -117,35 +119,87 @@ function checkAnswer(option) {
   }
 }
 
+let outcomeTexts = [
+  "Printing out a summary typically involves using a printer, which  consumes electricity and may require additional resources such as ink  and toner. The production and use of printers, as well as the disposal  of ink cartridges and electronic waste, contribute to carbon emissions  and environmental degradation.",
+  "Fast food chains like McDonald's often source ingredients from industrialized agriculture, which can contribute to deforestation, habitat destruction, and greenhouse gas emissions. The production and transportation of beef for items like the Big Mac can have a substantial carbon footprint due to methane emissions from cattle and energy-intensive processes.",
+  "Fast fashion brands like Zara are known for their high turnover of clothing items, which encourages overconsumption and contributes to textile waste. The production of clothing by fast fashion companies often involves resource-intensive processes and have questionable labor practices.",
+  "Driving a car to the party can lead to higher emissions compared to public transport, especially if the vehicle is fueled by gasoline or diesel. Individual car travel contributes to air pollution, greenhouse gas emissions, and traffic congestion, all of which have negative environmental impacts.",
+  "Showering for an extended period increases water usage and energy consumption, contributing to higher carbon emissions associated with water heating.",
+  "Traveling long distances, especially by air, can result in significant carbon emissions due to fuel consumption. Tourism in warm destinations may contribute to environmental pressures such as habitat degradation and increased energy usage for cooling.",
+  "Buying bottled drinks contributes to climate change because the production process requires fossil fuels and energy, leading to carbon emissions. Plastic bottles also contribute to pollution when improperly disposed of, take a long time to decompose, and require transportation, further increasing their carbon footprint.",
+  "Discarding electronics in the trash contributes to electronic waste accumulation in landfills, where hazardous materials can leach into the environment and pose risks to human health and ecosystems.",
+];
+
+let alreadyPicked = [];
+
+let outcomeTextCounter = 1;
+
 function endQuiz() {
   let backgroundImageUrl = ""; // Initialize variable to store the background image URL
 
   if (score >= -2) {
     questionElement.textContent = `You're doing an amazing job living eco-consciously! Your actions make a big impact. Let's inspire others for a greener future!`;
-    backgroundImageUrl = "url(images/outcome1-3.jpg)"; // Set the background image URL for positive score
-    console.log(score);
+    questionElement.classList.add("outcome");
+    document.body.classList.add("good-outcome-bg");
+    document.getElementById("logo").classList.add("hidden");
+    change_hue_to(green);
   } else if (score >= -8) {
     questionElement.textContent = `Our planet is our only home. Every small action counts for a sustainable future. Let's be the change we wish to see!`;
-    backgroundImageUrl = "url(images/outcome2-1.jpg)"; // Set the background image URL for average score
-    console.log(score);
-    // questionElement.style.color = "black";
-  } else {
-    questionElement.textContent = `This is how the world will look like in 20 years if you don't start taking care of Mother Earth`;
-    questionElement.classList.add("bad-outcome");
+    questionElement.classList.add("outcome");
+    document.body.classList.add("avg-outcome-bg");
     document.getElementById("logo").classList.add("hidden");
-    backgroundImageUrl = "url(images/outcome3-2.jpg)"; // Set the background image URL for negative score
-    console.log(score);
+    change_hue_to(orange);
+  } else {
+    questionElement.textContent = `This is how the world will look like in 20 years if you don't start taking care of Mother Earth!`;
+    questionElement.classList.add("outcome");
+    document.body.classList.add("bad-outcome-bg");
+    document.getElementById("logo").classList.add("hidden");
+    change_hue_to(red);
   }
 
   // Apply the background image to the body element
   document.body.style.backgroundImage = backgroundImageUrl;
+  optionsElement.classList.add("quiz-end");
+  quizEnded = true;
 
-  optionsElement.innerHTML = "";
+  setOutcomeText();
+  setInterval(setOutcomeText, 10000);
+}
+
+function setOutcomeText() {
+  if (outcomeTexts.length === 0) refillOutcomeTexts();
+  const text = getRandomText();
+  optionsElement.innerHTML = getAnyButtonToStartHTML() + text;
+  const index = outcomeTexts.indexOf(text);
+  outcomeTexts.splice(index, 1);
+  alreadyPicked.push(text);
+}
+
+function getRandomText() {
+  const max = outcomeTexts.length - 1;
+  const min = 0;
+  let randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return outcomeTexts[randomnumber];
+}
+
+function refillOutcomeTexts() {
+  for (const t of alreadyPicked) {
+    outcomeTexts.push(t);
+  }
+}
+
+function getAnyButtonToStartHTML() {
+  return `<div class='press-to-restart'><img src="assets/circle-fill-copy.svg" alt="circle" class="circle" />Press
+  any button to restart</div>`;
 }
 
 document.addEventListener("keypress", function (event) {
   const key = event.key.toUpperCase();
   const validKeys = ["A", "B", "C"];
+
+  if (quizEnded) {
+    location.reload();
+  }
 
   if (!quizStarted && validKeys.includes(key)) {
     quizStarted = true;

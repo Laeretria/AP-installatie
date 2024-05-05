@@ -7,14 +7,14 @@ import keyboard
 
 keymapping = {
     "20": "a",
-    "4": "b",
-    "18": "c",
+    "18": "b",
+    "4": "c",
 }
 
 press_lock = False
 
 GPIO.setmode(GPIO.BCM)  # Set's GPIO pins to BCM GPIO numbering
-PINS = [20,4,18]        # Sets our input pin, in this example I'm connecting our button to pin 4. Pin 0 is the SDA pin so I avoid using it for sensors/buttons
+PINS = [4,20,18]        # Sets our input pin, in this example I'm connecting our button to pin 4. Pin 0 is the SDA pin so I avoid using it for sensors/buttons
 for pin in PINS:
     GPIO.setup(pin, GPIO.IN)
     GPIO.add_event_detect(pin, GPIO.FALLING, callback=lambda p: callback(p), bouncetime=30)
