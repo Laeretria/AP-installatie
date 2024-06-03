@@ -250,10 +250,75 @@ The Philips Hue light bulb reflects the user's answers with different colors. Th
 
 [![IMG-2265.jpg](https://i.postimg.cc/Hs54vPhp/IMG-2265.jpg)](https://postimg.cc/GHLyHzRN)
 
+# 💻 How everything is coded
 
+### Python script
 
+[![code1.jpg](https://i.postimg.cc/c4LGQ21b/code1.jpg)](https://postimg.cc/WtCyV9kG)
 
+This script sets up GPIO pins on a Raspberry Pi for input, maps specific button presses to corresponding keyboard characters, and ensures that rapid button presses are handled properly by using a lock mechanism. The program continuously runs in a loop, waiting for button presses. When a button is pressed, it triggers a callback function that simulates keyboard input and schedules a task to reset the lock after a short delay.
 
+### Light script
+
+[![code7.jpg](https://i.postimg.cc/3JHcMCr7/code7.jpg)](https://postimg.cc/dD4BrCTS)
+
+This code is designed to control a Philips Hue light system by changing the color of a specific light through a web API. It starts by defining several constants, including the API endpoint, a key for storing the username in the local storage, a JSON object representing the device type, and three hue values representing red, orange, and green colors. 
+
+The main part of the code is an `init` function that checks if the username for the Hue API is already stored in the local storage. If not, it requests a new username from the API and stores it. The username is then retrieved from local storage and assigned to a variable. 
+
+The `request_username` function sends a POST request to the API endpoint to obtain a new username and returns it. The `change_hue_to` function changes the hue of a specific light (identified as light 1) to the specified color by sending a PUT request with the desired hue value to the API. The `reset_color` function sets the light's saturation, brightness, and hue to zero, effectively turning it off.
+
+Finally, the `init` function is called, and a message is logged to the console once the Philips Hue client is initialized. This setup allows the user to control the light's color through the defined functions after ensuring a valid username is obtained and stored.
+
+### Questions
+
+[![code2.jpg](https://i.postimg.cc/6QsxkhnV/code2.jpg)](https://postimg.cc/RWTYfKPq)
+
+This code defines a list of questions along with their possible answers and assigns weights to each answer. The structure is designed to evaluate responses based on predefined criteria, which are represented by the weights. Here's a detailed breakdown of what each part of the code does:
+
+**1. Array of Questions (questions):**
+
+- Each element in the questions array is an object representing a single question.
+- Each question object contains three properties:
+  - question: A string representing the question being asked.
+  - options: An array of strings representing the possible answers to the question.
+  - weights: An object mapping each option (represented by a key like A, B, or C) to a weight (a numerical value) that indicates the significance or impact of choosing that option.
+
+**2. Purpose of the Weights:**
+
+- Weights are used to quantify the impact or preference of each answer choice. For instance, if the weight is negative, it might indicate a less desirable or less preferred choice in the context of the evaluation.
+
+Here, the question is about styling a white t-shirt.
+- There are three options: Levi's Jeans (A), Zara's Trousers (B), and Nike's Joggers (C).
+- The weights indicate that choosing Levi's Jeans has no impact (weight 0), while choosing either Zara's Trousers or Nike's Joggers is considered less desirable (weight -2).
+
+### Outcome messages
+
+[![code5-1.jpg](https://i.postimg.cc/mg8WDFcJ/code5-1.jpg)](https://postimg.cc/3k4cfNFF)
+
+[![code5.jpg](https://i.postimg.cc/P5FV9bvX/code5.jpg)](https://postimg.cc/cvwc8nc2)
+
+The code manages a list of environmental impact statements (outcomeTexts) and ensures that a random, unique statement is displayed each time the setOutcomeText function is called. Once all statements are used, the list is refilled.
+
+### End quiz
+
+[![code3.jpg](https://i.postimg.cc/ZR9hyD8d/code3.jpg)](https://postimg.cc/2bftsGXk)
+
+The endQuiz function is designed to execute actions based on the user's quiz score, providing feedback and changing the visual presentation of the webpage accordingly. Here is a detailed explanation of what the function does:
+
+**Score-Based Conditional Statements:**
+
+- The function checks the score variable to determine which outcome to display. The outcomes are categorized into three ranges based on the score value, for example:
+  - [![code4.jpg](https://i.postimg.cc/KvTvW4gM/code4.jpg)](https://postimg.cc/hfSBzDsD)
+  - This code displays a positive message and changes the body background by adding the `good-outcome-bg` class. It also calls the function `change_hue_to(green)` to change the light to green.
+
+In summary, this function handles the end-of-quiz actions by providing feedback based on the user's score, adjusting the visual presentation of the webpage, and ensuring the user sees relevant messages about their performance and its environmental implications.
+
+### Checks
+
+[![code6.jpg](https://i.postimg.cc/wTWkjh5S/code6.jpg)](https://postimg.cc/dLyCWZxB)
+
+This JavaScript code sets up an event listener for key presses on the entire document. When a key is pressed, it captures the key, converts it to uppercase, and checks if it is one of the valid keys ("A", "B", or "C"). If the quiz has ended, the page reloads. If the quiz has not started and a valid key is pressed, the quiz starts by setting `quizStarted` to true, hiding the general question element, and displaying the first quiz question using the `showQuestion` function. If the quiz has already started and a valid key is pressed, the `checkAnswer` function is called with the pressed key to check the answer. This script manages the state of the quiz, starting it on a valid key press and checking answers during the quiz.
 
 
 
