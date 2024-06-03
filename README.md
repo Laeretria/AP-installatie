@@ -325,7 +325,9 @@ In summary, this function handles the end-of-quiz actions by providing feedback 
 This JavaScript code sets up an event listener for key presses on the entire document. When a key is pressed, it captures the key, converts it to uppercase, and checks if it is one of the valid keys ("A", "B", or "C"). If the quiz has ended, the page reloads. If the quiz has not started and a valid key is pressed, the quiz starts by setting `quizStarted` to true, hiding the general question element, and displaying the first quiz question using the `showQuestion` function. If the quiz has already started and a valid key is pressed, the `checkAnswer` function is called with the pressed key to check the answer. This script manages the state of the quiz, starting it on a valid key press and checking answers during the quiz.
 # 🎥 Video
 
+[![Lifestyle_in_Focus](https://img.youtube.com/vi/Vr5I9lLTWOA/maxresdefault.jpg)](https://youtu.be/Vr5I9lLTWOA)
 
+[Lifestyle in Focus](https://youtu.be/Vr5I9lLTWOA)
 
 
 
