@@ -272,7 +272,7 @@ Finally, the `init` function is called, and a message is logged to the console o
 
 ### Questions
 
-[![code2.jpg](https://i.postimg.cc/6QsxkhnV/code2.jpg)](https://postimg.cc/RWTYfKPq)
+[![code8.jpg](https://i.postimg.cc/8z2nBqKR/code8.jpg)](https://postimg.cc/rD9JqYLs)
 
 This code defines a list of questions along with their possible answers and assigns weights to each answer. The structure is designed to evaluate responses based on predefined criteria, which are represented by the weights. Here's a detailed breakdown of what each part of the code does:
 
@@ -287,6 +287,10 @@ This code defines a list of questions along with their possible answers and assi
 **2. Purpose of the Weights:**
 
 - Weights are used to quantify the impact or preference of each answer choice. For instance, if the weight is negative, it might indicate a less desirable or less preferred choice in the context of the evaluation.
+
+**For Example:**
+
+[![code2.jpg](https://i.postimg.cc/6QsxkhnV/code2.jpg)](https://postimg.cc/RWTYfKPq)
 
 Here, the question is about styling a white t-shirt.
 - There are three options: Levi's Jeans (A), Zara's Trousers (B), and Nike's Joggers (C).
@@ -319,8 +323,7 @@ In summary, this function handles the end-of-quiz actions by providing feedback 
 [![code6.jpg](https://i.postimg.cc/wTWkjh5S/code6.jpg)](https://postimg.cc/dLyCWZxB)
 
 This JavaScript code sets up an event listener for key presses on the entire document. When a key is pressed, it captures the key, converts it to uppercase, and checks if it is one of the valid keys ("A", "B", or "C"). If the quiz has ended, the page reloads. If the quiz has not started and a valid key is pressed, the quiz starts by setting `quizStarted` to true, hiding the general question element, and displaying the first quiz question using the `showQuestion` function. If the quiz has already started and a valid key is pressed, the `checkAnswer` function is called with the pressed key to check the answer. This script manages the state of the quiz, starting it on a valid key press and checking answers during the quiz.
-
-
+# 🎥 Video
 
 
 
