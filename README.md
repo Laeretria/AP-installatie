@@ -27,36 +27,36 @@ Step into "Lifestyle in Focus," an **interactive journey** where you'll navigate
 - HDMI Cable
 - TV screen
 # ⛺ Setup
-**Step 1** - Setting Up Raspberry Pi
+### Step 1 - Setting Up Raspberry Pi
 
-1. Prepare your Raspberry Pi:
+**1. Prepare your Raspberry Pi:**
 - Install Raspberry Pi OS on the microSD card.
 - Insert the microSD card into the Raspberry Pi.
 - Connect the Raspberry Pi to the TV using the HDMI cable.
 - Connect the keyboard and mouse to the Raspberry Pi.
 
-2. Power on the Raspberry Pi:
+**2. Power on the Raspberry Pi:**
 - Connect the Raspberry Pi to a power source using the USB-C power adapter.
 - Follow the on-screen instructions to complete the Raspberry Pi setup, including connecting to Wi-Fi.
 
-**Step 2** - Setting Up the Philips Hue Bridge and Lights
+### Step 2 - Setting Up the Philips Hue Bridge and Lights
 
-1. Connect the Philips Hue Bridge:
+**1. Connect the Philips Hue Bridge:**
 - Plug the Philips Hue Bridge into a power outlet.
 - Connect the Hue Bridge to your router using one of the Ethernet cables.
 - Wait for the lights on the Hue Bridge to turn on and stabilize
 
-2. Set up the Philips Hue Go Light:
+**2. Set up the Philips Hue Go Light:**
 - Turn on the Philips Hue Go light.
 - Using the Philips Hue app on your smartphone, follow the instructions to connect the Hue Go light to the Hue Bridge.
 
-**Step 3** - Wiring the buttons
-1. Prepare the Breadboard and Buttons:
+### Step 3 - Wiring the buttons
+**1. Prepare the Breadboard and Buttons:**
 - Place the three buttons on the breadboard.
 
 [![breadboard.png](https://i.postimg.cc/nL6chR0R/breadboard.png)](https://postimg.cc/bG9j6TXk)
 
-2. Connect the Buttons to the Raspberry Pi:
+**2. Connect the Buttons to the Raspberry Pi:**
 - Use jumper wires to connect one terminal of each button to the ground (GND) pin on the Raspberry Pi.
 - Connect the other terminal of each button to different GPIO pins on the Raspberry Pi. Use GPIO20, GPIO18, and GPIO4.
 
@@ -64,13 +64,13 @@ Step into "Lifestyle in Focus," an **interactive journey** where you'll navigate
 
 [![rpi.png](https://i.postimg.cc/yYbqKJfn/rpi.png)](https://postimg.cc/KRBprYhg)
 
-**Step 4** - Network Connections
+### Step 4 - Network Connections
 
-1. Connect the Switch:
+**1. Connect the Switch:**
 - Plug the switch into a power outlet.
 - Connect the switch to your router using the second Ethernet cable.
 
-2. Connect the Raspberry Pi to the Switch:
+**2. Connect the Raspberry Pi to the Switch:**
 - Use an Ethernet cable to connect the Raspberry Pi to the switch for a stable network connection.
 
 [![setup-3.jpg](https://i.postimg.cc/vms690zD/setup-3.jpg)](https://postimg.cc/qN1RHXWd)
@@ -79,9 +79,9 @@ Step into "Lifestyle in Focus," an **interactive journey** where you'll navigate
 
 To install the project, follow these steps:
 
-**Step 1** - Download or clone the project locally
+### Step 1 - Download or clone the project locally
 
-**Step 2** - Run Python script
+### Step 2 - Run Python script
 
 > **NOTE:**  On a Raspberry Pi 4 with Raspberry Pi OS, Python 3 is typically pre-installed. However, if for some reason it isn't available or if you want to ensure you have the latest version, you can install it manually. Here’s how you can check if Python 3 is installed and how to install it if necessary: `python3 --version
 ` or  `sudo apt install python3`
@@ -94,7 +94,7 @@ To install the project, follow these steps:
 ```
 > **NOTE:**  Leave the script running in the background.
 
-**Step 3** - Install `RPi.GPIO`
+### Step 3 - Install `RPi.GPIO`
 
 ```
 
@@ -102,7 +102,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 4** - Install `keyboard` Library
+### Step 4 - Install `keyboard` Library
 
 ```
 
@@ -110,7 +110,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 5** - Enable GPIO and Set Permissions
+### Step 5 - Enable GPIO and Set Permissions
 
 ```
 
@@ -118,7 +118,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 6** - Reboot your Raspberry Pi for the changes to take effect
+### Step 6 - Reboot your Raspberry Pi for the changes to take effect
 
 ```
 
@@ -126,7 +126,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 7** - Install a webserver of your choice on the Raspberry Pi (in this case Apache 2)
+### Step 7 - Install a webserver of your choice on the Raspberry Pi (in this case Apache 2)
 
 ```
 
@@ -134,7 +134,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 8** - Copy the project to the webroot directory
+### Step 8 - Copy the project to the webroot directory
 
 ```
 
@@ -142,7 +142,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 9** - Run Apache 2
+### Step 9 - Run Apache 2
 
 ```
 
@@ -150,7 +150,7 @@ To install the project, follow these steps:
 
 ```
 
-**Step 10** - Automatically start Apache 2 on boot
+### Step 10 - Automatically start Apache 2 on boot
 ```
 
   sudo systemctl enable apache2
@@ -161,7 +161,7 @@ To install the project, follow these steps:
 
 First we need to locate the ip address.
 
-**Step 1** - Install nmap 
+### Step 1 - Install nmap 
 
 ```
 
@@ -171,7 +171,7 @@ First we need to locate the ip address.
 
 > **NOTE:**  Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing.
 
-**Step 2** - Use `ifconfig` to locate the ip address of your Raspberry Pi
+### Step 2 - Use `ifconfig` to locate the ip address of your Raspberry Pi
 
 ```
 
@@ -179,7 +179,7 @@ First we need to locate the ip address.
 
 ```
 
-**Step 2** - Run nmap
+### Step 3 - Run nmap
 
 ```
 
@@ -188,7 +188,7 @@ First we need to locate the ip address.
 ```
 [![IMG-NMAP.png](https://i.postimg.cc/Nf0STrkw/IMG-NMAP.png)](https://postimg.cc/CdWcp52v)
 
-**Step 3** - Change the endpoint to the ip address of the Philips Hue Bridge in `hue/client.js` folder
+### Step 4 - Change the endpoint to the ip address of the Philips Hue Bridge in `hue/client.js` folder
 
 ```
 
@@ -202,7 +202,7 @@ First we need to locate the ip address.
 # ✈️ Run
 After installing all the necessary libraries and completing the configuration of the Philips Hue Bridge, you can now take a look at the project. Follow these steps:
 
-**Step 1** - Surf to `localhost/your-project-folder`
+### Step 1 - Surf to `localhost/your-project-folder`
 
 [![surf-localhost.png](https://i.postimg.cc/8C36nTdX/surf-localhost.png)](https://postimg.cc/R37hW5Dw)
 
@@ -211,6 +211,8 @@ And tada you now have Lifestyle in Focus ✨
 [![finished-lifestyle-in-focus.jpg](https://i.postimg.cc/wvCjDv5H/finished-lifestyle-in-focus.jpg)](https://postimg.cc/JDQ8LRdd)
 
 # 🏡 How it's built
+### Box for Buttons
+
 
 
 
