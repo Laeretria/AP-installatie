@@ -73,6 +73,8 @@ Step into "Lifestyle in Focus," an **interactive journey** where you'll navigate
 2. Connect the Raspberry Pi to the Switch:
 - Use an Ethernet cable to connect the Raspberry Pi to the switch for a stable network connection.
 
+[![setup-3.jpg](https://i.postimg.cc/vms690zD/setup-3.jpg)](https://postimg.cc/qN1RHXWd)
+
 # 🌱 Install
 
 To install the project, follow these steps:
