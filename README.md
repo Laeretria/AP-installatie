@@ -212,6 +212,44 @@ And tada you now have Lifestyle in Focus ✨
 
 # 🏡 How it's built
 ### Box for Buttons
+To make "Lifestyle in Focus" more interactive, I installed push buttons for users to answer questions using red, blue, and green buttons. I created a custom box to hold these buttons securely, with dimensions of 400mm (Width) x 100mm (Height) x 150mm (Depth). This open box design prevents materials from overheating. I chose 4mm thickness for durability and added edge joint finger slots for easy assembly.
+
+[![makercase.jpg](https://i.postimg.cc/zv68wqyC/makercase.jpg)](https://postimg.cc/zHCs8ZSv)
+
+I downloaded an SVG file and then modified it in Illustrator to include holes for the push buttons and additional openings for cable routing.
+
+> Tip: measure in advance how far apart the buttons should be.
+
+[![Artboard-1.png](https://i.postimg.cc/mg6SGDP3/Artboard-1.png)](https://postimg.cc/qNyKspXg)
+
+While setting up my installation with the box, I encountered difficulty with the (green) holes I created for cable routing. Connecting the cables and then closing the box while threading the cable through proved challenging. As a suggestion, I recommend making rectangular holes to allow more space for the cable to pass through after connection.
+
+[![Artboard-2.png](https://i.postimg.cc/TYq6QKkP/Artboard-2.png)](https://postimg.cc/mtDJggWx)
+
+After the box was laser-cut, I began painting it.
+
+[![painting-box.jpg](https://i.postimg.cc/zGy3Qw4j/painting-box.jpg)](https://postimg.cc/bZjzDnyD)
+
+[![final-box.jpg](https://i.postimg.cc/yNJQWGtZ/final-box.jpg)](https://postimg.cc/cKSMbFsx)
+
+To attach the push buttons to the box, you unscrew the bottom wheel of the button. You put the button through the hole and screw the wheel back on. This secures the buttons to the box.
+
+[![setup-2.jpg](https://i.postimg.cc/7YwT6Td1/setup-2.jpg)](https://postimg.cc/ThNPNhRh)
+
+### Decorations
+
+I added some decorations, such as plants and LED lights, and placed a table to elevate the box, creating an ambiance. Additionally, I covered the windows with cardboard to darken the room, allowing users to focus on the questions and the light feedback, thus enhancing the overall impact.
+
+[![IMG-2160.jpg](https://i.postimg.cc/T2LZwCBm/IMG-2160.jpg)](https://postimg.cc/fksHqjzT)
+
+### Lights
+
+The Philips Hue light bulb reflects the user's answers with different colors. There are three categories: red indicates an answer with a significant impact on the climate, orange represents a moderate impact, and green signifies an eco-friendly choice.
+
+[![IMG-2165.jpg](https://i.postimg.cc/bJ1hMgxK/IMG-2165.jpg)](https://postimg.cc/7GPdJgQV)
+
+[![IMG-2265.jpg](https://i.postimg.cc/Hs54vPhp/IMG-2265.jpg)](https://postimg.cc/GHLyHzRN)
+
 
 
 
