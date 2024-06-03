@@ -1,4 +1,4 @@
-# 🏡 Lifestyle in Focus
+# ✨ Lifestyle in Focus
 
 Step into "Lifestyle in Focus," an **interactive journey** where you'll navigate personal questions with just the push of a button. Delve into your **daily habits** and choices as you uncover surprising insights **about yourself**. But beware of the twist: a hidden message awaits, revealing how your **lifestyle connects** to something much larger. It's a captivating exploration of self-discovery and **environmental awareness**, showing how your actions shape the **world around** you in unexpected ways.
 
@@ -202,13 +202,13 @@ After installing all the necessary libraries and completing the configuration of
 
 **Step 1** - Surf to `localhost/your-project-folder`
 
-[![surf.png](https://i.postimg.cc/jjSwSp5Q/surf.png)](https://postimg.cc/yD2Yfr0k)
+[![surf-localhost.png](https://i.postimg.cc/8C36nTdX/surf-localhost.png)](https://postimg.cc/R37hW5Dw)
 
 And tada you now have Lifestyle in Focus ✨
 
-[![lifestyle-in-focus.jpg](https://i.postimg.cc/J4CLqjj9/lifestyle-in-focus.jpg)](https://postimg.cc/vDhk8gqz)
+[![finished-lifestyle-in-focus.jpg](https://i.postimg.cc/wvCjDv5H/finished-lifestyle-in-focus.jpg)](https://postimg.cc/JDQ8LRdd)
 
-
+# 🏡 How it's built
 
 
 
